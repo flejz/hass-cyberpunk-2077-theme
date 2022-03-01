@@ -19,10 +19,6 @@
 
 ![Theme - Logbook](docs/theme-logbook.png)
 
-### History
-
-![Theme - History](docs/theme-history.png)
-
 ### Developer Tools
 
 ![Theme - Developer Tools](docs/theme-developer-tools.png)
