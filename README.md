@@ -5,19 +5,23 @@
 
 > The Cyberpunk 2077 Theme by @flejz
 
+## Reference GUI
+
+![Reference](docs/reference.png)
+
 ## Screenshots
 
 ### Overview
 
 ![Theme - Overview](docs/theme-overview.png)
 
-### Map
-
-![Theme - Map](docs/theme-map.png)
-
 ### Logbook
 
 ![Theme - Logbook](docs/theme-logbook.png)
+
+### History
+
+![Theme - History](docs/theme-history.png)
 
 ### Developer Tools
 
