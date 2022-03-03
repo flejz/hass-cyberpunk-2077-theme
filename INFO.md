@@ -54,3 +54,7 @@ frontend:
 Optionally you can add the [Rajdhani](https://fonts.google.com/specimen/Rajdhani) font as a resource to have yet a closer experience:
 
 `https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap`
+
+### Overview with Font
+
+![Theme - Overview with font](docs/theme-overview-with-font.png)
