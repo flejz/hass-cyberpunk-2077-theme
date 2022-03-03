@@ -68,3 +68,9 @@ Or using submodules:
 cd themes/
 git submodule add https://github.com/flejz/hass-cyberpunk-2077-theme.git
 ```
+
+### Font
+
+Optionally you can add the [Rajdhani](https://fonts.google.com/specimen/Rajdhani) font as a resource to have yet a closer experience:
+
+`https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap`
