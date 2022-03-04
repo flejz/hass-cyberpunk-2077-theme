@@ -19,10 +19,6 @@
 
 ![Theme - Logbook](docs/theme-logbook.png)
 
-### History
-
-![Theme - History](docs/theme-history.png)
-
 ### Developer Tools
 
 ![Theme - Developer Tools](docs/theme-developer-tools.png)
@@ -34,6 +30,22 @@
 ### Profile
 
 ![Theme - Profile](docs/theme-profile.png)
+
+
+## Font
+
+Optionally you can add the [Rajdhani](https://fonts.google.com/specimen/Rajdhani) font as a stylesheet resource to have yet a closer experience:
+
+`https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap`
+
+![Theme - Overview with font](docs/theme-overview-with-font.png)
+
+## Cyberdeck Mk. 3
+
+In case you have [card-mod](https://github.com/thomasloven/lovelace-card-mod) this is what you gonna get instead:
+
+
+![Theme - Cyber Overview](docs/theme-overview-card-mod.png)
 
 ## Installation
 
@@ -68,13 +80,3 @@ Or using submodules:
 cd themes/
 git submodule add https://github.com/flejz/hass-cyberpunk-2077-theme.git
 ```
-
-### Font
-
-Optionally you can add the [Rajdhani](https://fonts.google.com/specimen/Rajdhani) font as a resource to have yet a closer experience:
-
-`https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap`
-
-### Overview with Font
-
-![Theme - Overview with font](docs/theme-overview-with-font.png)
