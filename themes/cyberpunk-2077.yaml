@@ -1,12 +1,172 @@
 cyberpunk-2077:
   # global variables
+
   cyan-color: "#5EF6FF"
-  dark-gray-color: "#030307"
+  dark-cyan-color: "#1D4E51"
   dark-purple-color: "#140C15"
   dark-red-color: "#4A1D1F"
   orange-color: "#FFA500"
   primary-font-family: "'Rajdhani', 'Roboto'"
   red-color: "#F44638"
+
+  # card-mod
+  card-mod-theme: cyberpunk-2077
+
+  card-mod-root: |
+    :host {
+      background-color:yellow;
+    }
+
+  card-mod-row: |
+    :host {
+      background-color:yellow;
+    }
+
+  # background-color: {% if not states(config.entity) %} var(--red-color);
+  # {% elif is_state(config.entity, 'undefined') %} var(--red-color);
+  # {% elif is_state(config.entity, 'on') %} var(--cyan-color);
+  # {% else %} var(--red-color);
+  # {% endif %}
+
+  card-mod-card: |
+    ha-card,
+    ha-card:before {
+      border-radius: 1px;
+      clip-path: polygon(
+        0% 0%, 
+        40px 0%, 
+        45px 4px, 
+        100% 4px, 
+        100% calc(100% - 20px), 
+        calc(100% - 20px) 100%, 0% 100%
+      );
+    }
+
+    ha-card {
+      transition: all 300ms ease-out; 
+      background-color: var(--red-color);
+    }
+
+    ha-card > * {
+      z-index: 2;
+    }
+
+    ha-card:before {
+      background: var(--dark-red-color);
+      content: '';
+      display: block;
+      height: calc(100% - 3px);
+      left: 1px;
+      position: absolute;
+      top: 2px;
+      width: calc(100% - 2px);
+      z-index: -1;
+    }
+
+  card-mod-glance: |
+    :host {
+      background-color:yellow;
+    }
+
+
+  card-mod-badge: |
+    :host {
+      background-color:yellow;
+    }
+
+
+  card-mod-element: |
+    :host {
+      background-color:yellow;
+    }
+
+
+  card-mod-more-info: |
+    :host {
+      background-color:yellow;
+    }
+
+
+  card-mod-sidebar: |
+
+    .menu .title {
+      color: var(--cyan-color);
+      font-family: var(--primary-font-family);
+      font-weight: bold;
+      margin-top: 4px;
+      text-shadow: 0 0 0 transparent, 
+                   0 0 10px var(--cyan-color), 
+                   0 0 20px var(--cyan-color);
+      text-transform: uppercase;
+    }
+
+    .menu ha-icon-button {
+      color: var(--cyan-color) !important;
+    }
+
+    a paper-icon-item span,
+    a paper-icon-item:hover span {
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    a paper-icon-item:hover span,
+    a paper-icon-item:hover ha-icon,
+    a paper-icon-item:hover ha-svg-icon {
+      color: var(--cyan-color);
+    }
+
+    a paper-icon-item,
+    a paper-icon-item:before{
+      border-radius: 1px;
+      clip-path: polygon(
+        0% 10px, 
+        10px 0%, 
+        100% 0px, 
+        100% calc(100% - 10px), 
+        calc(100% - 10px) 100%, 
+        0% 100%
+      );
+    }
+
+    a paper-icon-item,
+    a paper-icon-item:before {
+      background-color: var(--red-color);
+      transition: background-color 300ms ease-out, color 300ms ease-out; 
+    }
+
+
+    a paper-icon-item:before {
+      background: var(--dark-red-color);
+      content: '';
+      display: block;
+      height: calc(100% - 3px);
+      left: 1px;
+      position: absolute;
+      top: 2px;
+      width: calc(100% - 2px);
+    }
+
+    a paper-icon-item:hover,
+    a[aria-selected=true] paper-icon-item {
+      color: var(--cyan-color); 
+      background-color: var(--cyan-color); 
+    }
+
+    .iron-selected paper-icon-item:focus::before,
+    a paper-icon-item:hover:before,
+    a paper-icon-item:focus:before,
+    a[aria-selected=true] paper-icon-item:before {
+      border-radius: 1px;
+      position: absolute;
+      inset: 2px 1px;
+      pointer-events: none;
+      content: "";
+      will-change: auto;
+      background-color: var(--dark-cyan-color); 
+      opacity: 1 !important;
+    }
+
 
   # configs 
   accent-color: "var(--red-color)"
