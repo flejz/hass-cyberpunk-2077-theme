@@ -1,7 +1,7 @@
 cyberpunk-2077:
   # global variables
   cyan-color: "#5EF6FF"
-  dark-gray-color: "#030307"
+  dark-cyan-color: "#1D4E51"
   dark-purple-color: "#140C15"
   dark-red-color: "#4A1D1F"
   orange-color: "#FFA500"
@@ -249,10 +249,8 @@ cyberpunk-2077:
   material-body-color: "var(--red-color)"
   material-button-font-size: ""
   material-caption-font-size: ""
-  material-disabled-color: ""
   material-disabled-color: "var(--red-color)"
   material-divider-color: ""
-  material-error-color: ""
   material-error-color: "var(--red-color)"
   material-h6-font-size: ""
   material-primary-background-color: "var(--dark-purple-color)"
@@ -573,3 +571,193 @@ cyberpunk-2077:
   text-primary-color: "var(--dark-purple-color)"
   text-primary-background-color: "var(--dark-red-color)"
   warning-color: ""
+
+  # card-mod
+  card-mod-theme: cyberpunk-2077
+
+
+  # background-color: {% if not states(config.entity) %} var(--red-color);
+  # {% elif is_state(config.entity, 'undefined') %} var(--red-color);
+  # {% elif is_state(config.entity, 'on') %} var(--cyan-color);
+  # {% else %} var(--red-color);
+  # {% endif %}
+  #clip-path: polygon(57% 0%, 0% 57%, 0% 80%, 80% 0%, 70% 0%, 0% 70%, 0% 47%, 47% 0%);
+
+  card-mod-card: |
+    ha-card,
+    ha-card:before {
+      border-radius: 1px;
+      clip-path: polygon(
+        0% 0%, 
+        40px 0%, 
+        45px 4px, 
+        100% 4px, 
+        100% calc(100% - 20px), 
+        calc(100% - 20px) 100%, 0% 100%
+      );
+    }
+
+    ha-card,
+    ha-card:before,
+    ha-card:after {
+
+      transition: all 100ms ease-out; 
+    }
+
+    ha-card {
+      background-color: var(--red-color);
+    }
+
+    ha-card:hover {
+      clip-path: polygon(
+        0px 0px, 
+        100% 0px, 
+        100% calc(100% - 20px), 
+        calc(100% - 20px) 100%, 
+        0px 100%
+      );
+    }
+
+    ha-card:hover,
+    ha-card:hover:after {
+      background-color: var(--cyan-color);
+    }
+
+    ha-card > * {
+      z-index: 2;
+    }
+
+    ha-card:before {
+      background: var(--dark-red-color);
+      content: '';
+      display: block;
+      height: calc(100% - 3px);
+      left: 1px;
+      position: absolute;
+      top: 2px;
+      width: calc(100% - 2px);
+      z-index: -1;
+    }
+
+    ha-card:after {
+      background: var(--red-color);
+      bottom: 0px;
+      clip-path: polygon(100% 0%, 100% 2px, 2px 100%, 0% 100%);
+      color: var(--red-color); 
+      content: '';
+      display: block;
+      height: 27px;
+      position: absolute;
+      right: 0px;
+      width: 27px;
+    }
+
+  card-mod-sidebar: |
+    .menu .title {
+      color: var(--cyan-color);
+      font-family: var(--primary-font-family);
+      font-weight: bold;
+      margin-top: 4px;
+      text-shadow: 0 0 0 transparent, 
+                   0 0 10px var(--cyan-color), 
+                   0 0 20px var(--cyan-color);
+      text-transform: uppercase;
+    }
+
+    .menu ha-icon-button {
+      color: var(--cyan-color) !important;
+    }
+
+    paper-icon-item span,
+    paper-icon-item:hover span {
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    paper-icon-item:hover span,
+    paper-icon-item:hover ha-icon,
+    paper-icon-item:hover ha-svg-icon {
+      color: var(--cyan-color);
+    }
+
+    paper-icon-item,
+    paper-icon-item:before{
+      border-radius: 1px !important;
+      clip-path: polygon(
+        0 0,
+
+        calc(100% - 10px) 0px, 
+        100% 10px, 
+
+
+        100% calc(100% - 10px), 
+        calc(100% - 10px) 100%, 
+        0% 100%
+      );
+    }
+
+    paper-icon-item,
+    paper-icon-item:before {
+      background-color: var(--red-color);
+      transition: background-color 100ms ease-out, color 100ms ease-out; 
+    }
+
+    paper-icon-item:before {
+      background: var(--dark-red-color);
+      content: '';
+      display: block;
+      height: calc(100% - 3px);
+      left: 1px;
+      position: absolute;
+      top: 2px;
+      width: calc(100% - 2px);
+      z-index: -1;
+    }
+
+    paper-icon-item:after {
+      background: var(--red-color);
+      content: '';
+      display: block;
+      height: 100%;
+      left: 4px;
+      position: absolute;
+      top: 0px;
+      width: 1px;
+    }
+
+    paper-icon-item:hover,
+    paper-icon-item:hover:after,
+    a[aria-selected=true] paper-icon-item,
+    a[aria-selected=true] paper-icon-item:after {
+      color: var(--cyan-color); 
+      background-color: var(--cyan-color); 
+    }
+
+    paper-icon-item:hover:before {
+      background-color: var(--dark-red-color);
+    }
+
+    .iron-selected paper-icon-item:focus::before,
+    paper-icon-item:focus:before,
+    paper-icon-item:focus:before,
+    a[aria-selected=true] paper-icon-item:before {
+      background-color: var(--dark-cyan-color); 
+    }
+
+    .iron-selected paper-icon-item:focus::before,
+    paper-icon-item:hover:before,
+    paper-icon-item:focus:before,
+    a[aria-selected=true] paper-icon-item:before {
+      border-radius: 1px;
+      position: absolute;
+      inset: 2px 1px;
+      pointer-events: none;
+      content: "";
+      will-change: auto;
+      opacity: 1 !important;
+    }
+
+    div.tooltip {
+      color: var(--dark-purple-color);
+      background-color: var(--cyan-color);
+    }
