@@ -7,6 +7,8 @@ cyberpunk-2077:
   orange-color: "#FFA500"
   primary-font-family: "'Rajdhani', 'Roboto'"
   red-color: "#F44638"
+  primary-background: 'url()'
+  background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/assets/background.jpg')"
 
   # configs 
   accent-color: "var(--red-color)"
@@ -233,7 +235,7 @@ cyberpunk-2077:
   layout-wrap-reverse_-_flex-wrap: ""
   layout-wrap-reverse_-_-ms-flex-wrap: ""
   layout-wrap-reverse_-_-webkit-flex-wrap: ""
-  lovelace-background: "linear-gradient(180deg, rgba(55,20,27,1) 0%, rgba(21,11,18,1) 45%, rgba(5,12,17,1) 100%)"
+  lovelace-background: "var(--background-image)"
   light-disabled-opacity: "0.3"
   light-divider-opacity: ""
   light-primary-background-color: "var(--dark-purple-color)"
@@ -575,17 +577,12 @@ cyberpunk-2077:
   # card-mod
   card-mod-theme: cyberpunk-2077
 
-
-  # background-color: {% if not states(config.entity) %} var(--red-color);
-  # {% elif is_state(config.entity, 'undefined') %} var(--red-color);
-  # {% elif is_state(config.entity, 'on') %} var(--cyan-color);
-  # {% else %} var(--red-color);
-  # {% endif %}
-  #clip-path: polygon(57% 0%, 0% 57%, 0% 80%, 80% 0%, 70% 0%, 0% 70%, 0% 47%, 47% 0%);
+  card-mod-root: |
+    app-toolbar {
+    }
 
   card-mod-card: |
-    ha-card,
-    ha-card:before {
+    ha-card {
       border-radius: 1px;
       clip-path: polygon(
         0% 0%, 
@@ -593,14 +590,27 @@ cyberpunk-2077:
         45px 4px, 
         100% 4px, 
         100% calc(100% - 20px), 
-        calc(100% - 20px) 100%, 0% 100%
+        calc(100% - 20px) 100%,
+        0% 100%
+      );
+    }
+    
+    ha-card:before {
+      border-radius: 1px;
+      clip-path: polygon(
+        0% 0%, 
+        40px 0%, 
+        45px 4px, 
+        100% 4px, 
+        100% calc(100% - 23px), 
+        calc(100% - 23px) 100%,
+        0% 100%
       );
     }
 
     ha-card,
     ha-card:before,
     ha-card:after {
-
       transition: all 100ms ease-out; 
     }
 
@@ -646,13 +656,25 @@ cyberpunk-2077:
       color: var(--red-color); 
       content: '';
       display: block;
-      height: 27px;
+      height: 20px;
       position: absolute;
       right: 0px;
-      width: 27px;
+      width: 20px;
     }
 
   card-mod-sidebar: |
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
     .menu .title {
       color: var(--cyan-color);
       font-family: var(--primary-font-family);
@@ -676,50 +698,69 @@ cyberpunk-2077:
 
     paper-icon-item:hover span,
     paper-icon-item:hover ha-icon,
-    paper-icon-item:hover ha-svg-icon {
+    paper-icon-item:hover ha-svg-icon,
+    a[aria-selected=true] paper-icon-item span,
+    a[aria-selected=true] paper-icon-item ha-icon,
+    a[aria-selected=true] paper-icon-item ha-svg-icon {
       color: var(--cyan-color);
+      font-weight: bold;
+      text-shadow: 0 0 0 transparent, 
+                   0 0 10px var(--cyan-color);
     }
 
-    paper-icon-item,
-    paper-icon-item:before{
+    paper-icon-item:hover ha-icon,
+    paper-icon-item:hover ha-svg-icon,
+    a[aria-selected=true] paper-icon-item ha-icon,
+    a[aria-selected=true] paper-icon-item ha-svg-icon {
+      animation: blink 250ms infinite alternate
+    }
+
+    paper-icon-item {
+      background-color: var(--red-color);
       border-radius: 1px !important;
       clip-path: polygon(
-        0 0,
-
-        calc(100% - 10px) 0px, 
-        100% 10px, 
-
-
+        0px calc(100% - 7px),
+        1px calc(100% - 9px),
+        1px calc(100% - 20px),
+        0px calc(100% - 22px),
+        0px 0px,
+        100% 0px, 
         100% calc(100% - 10px), 
         calc(100% - 10px) 100%, 
-        0% 100%
+        0px 100%
       );
-    }
-
-    paper-icon-item,
-    paper-icon-item:before {
-      background-color: var(--red-color);
-      transition: background-color 100ms ease-out, color 100ms ease-out; 
     }
 
     paper-icon-item:before {
       background: var(--dark-red-color);
+      clip-path: polygon(
+        5px 0px,
+        100% 0px, 
+        100% calc(100% - 10px), 
+        calc(100% - 10px) 100%, 
+        5px 100%
+      );
       content: '';
       display: block;
-      height: calc(100% - 3px);
+      height: calc(100% - 2px);
       left: 1px;
       position: absolute;
-      top: 2px;
+      top: 1px;
       width: calc(100% - 2px);
       z-index: -1;
     }
 
+    paper-icon-item,
+    paper-icon-item:before {
+      transition: background-color 100ms ease-out, color 100ms ease-out; 
+    }
+
     paper-icon-item:after {
-      background: var(--red-color);
+      background-color: var(--red-color);
       content: '';
       display: block;
       height: 100%;
-      left: 4px;
+      left: 5px;
       position: absolute;
       top: 0px;
       width: 1px;
@@ -750,7 +791,7 @@ cyberpunk-2077:
     a[aria-selected=true] paper-icon-item:before {
       border-radius: 1px;
       position: absolute;
-      inset: 2px 1px;
+      inset: 1px 1px;
       pointer-events: none;
       content: "";
       will-change: auto;
