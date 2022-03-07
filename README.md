@@ -39,11 +39,35 @@ Optionally you can add the [Rajdhani](https://fonts.google.com/specimen/Rajdhani
 
 ![Theme - Overview with font](https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/docs/theme-overview-with-font.png)
 
-## Cyberdeck Mk. 3
+## Cyberdeck Mode - card-mod
 
 In case you have [card-mod](https://github.com/thomasloven/lovelace-card-mod) this is what you gonna get instead:
 
 ![Theme - Cyber Overview](https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/docs/theme-overview-card-mod.png)
+
+
+You can reflect the `ha-card` state by using `jinja2` templating  by adding the following `card_mod` snippet to your card:
+
+```css
+# light entity example
+
+- type: light
+  entity: light.01234
+  name: Desk
+  card_mod:
+    style: |
+      ha-card {
+        {% if is_state(config.entity, 'on') %}
+        background-color: var(--cyan-color);
+        {% endif %}
+      }
+```
+
+Then when the entity is on (light in this example) you would see this nice overlay:
+
+![Theme - State Overlay](https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/docs/theme-state-overlay.png)
+
+> PS: note that state may vary depending on your card. In that case you would just have to adapt `{% if is_state(config.entity, 'on') %}` accordingly.
 
 ## Installation
 
