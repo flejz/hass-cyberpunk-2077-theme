@@ -1,2 +1,2 @@
 python-githooks==1.0.7
-yamllint==1.26.3
+yamllint==1.27.1
