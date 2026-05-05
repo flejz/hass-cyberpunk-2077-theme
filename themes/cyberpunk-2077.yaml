@@ -44,7 +44,7 @@ cyberpunk-2077:
   ha-card-border-radius: ""
   ha-card-header-font-size: ""
   hacs-error-color: "var(--red-color)"
-  hacs-warning-color: "var(--orange-color_"
+  hacs-warning-color: "var(--orange-color)"
   hacs-update-color: "var(--cyan-color)"
   hacs-new-color: "var(--cyan-color)"
   hacs--default-icon-color: "var(--red-color)"
@@ -530,7 +530,7 @@ cyberpunk-2077:
   shadow-transition_-_transition: ""
   sidebar-background-color: "var(--dark-purple-color)"
   sidebar-icon-color: "var(--red-color)"
-  sidebar-selected-background-color: "var(--dark-red)"
+  sidebar-selected-background-color: "var(--dark-red-color)"
   sidebar-selected-icon-color: "var(--cyan-color)"
   sidebar-selected-color: "var(--cyan-color)"
   sidebar-selected-text-color: "var(--cyan-color)"
@@ -576,10 +576,6 @@ cyberpunk-2077:
 
   # card-mod
   card-mod-theme: cyberpunk-2077
-
-  card-mod-root: |
-    app-toolbar {
-    }
 
   card-mod-card: |
     ha-card {
@@ -653,7 +649,6 @@ cyberpunk-2077:
       background: var(--red-color);
       bottom: 0px;
       clip-path: polygon(100% 0%, 100% 2px, 2px 100%, 0% 100%);
-      color: var(--red-color); 
       content: '';
       display: block;
       height: 20px;
@@ -680,8 +675,7 @@ cyberpunk-2077:
       font-family: var(--primary-font-family);
       font-weight: bold;
       margin-top: 4px;
-      text-shadow: 0 0 0 transparent, 
-                   0 0 10px var(--cyan-color), 
+      text-shadow: 0 0 10px var(--cyan-color),
                    0 0 20px var(--cyan-color);
       text-transform: uppercase;
     }
@@ -704,8 +698,7 @@ cyberpunk-2077:
     a[aria-selected=true] paper-icon-item ha-svg-icon {
       color: var(--cyan-color);
       font-weight: bold;
-      text-shadow: 0 0 0 transparent, 
-                   0 0 10px var(--cyan-color);
+      text-shadow: 0 0 10px var(--cyan-color);
     }
 
     paper-icon-item:hover ha-icon,
@@ -779,7 +772,6 @@ cyberpunk-2077:
     }
 
     .iron-selected paper-icon-item:focus::before,
-    paper-icon-item:focus:before,
     paper-icon-item:focus:before,
     a[aria-selected=true] paper-icon-item:before {
       background-color: var(--dark-cyan-color); 
