@@ -68,7 +68,7 @@ cyberpunk-2077:
   label-badge-green: ""
   label-badge-grey: ""
   label-badge-red: ""
-  label-badge-color: "var(--red-color)"
+  label-badge-color: "var(--cyan-color)"
   label-badge-yellow: ""
   layout_-_display: ""
   layout-around-aligned_-_align-content: ""
@@ -577,9 +577,35 @@ cyberpunk-2077:
   # card-mod
   card-mod-theme: cyberpunk-2077
 
+  card-mod-root: |
+    ha-button-menu,
+    mwc-menu,
+    paper-dropdown-menu {
+      overflow: visible;
+      clip-path: none !important;
+    }
+
+    ha-label-badge {
+      --label-badge-color: var(--cyan-color);
+      color: var(--dark-purple-color);
+    }
+
+    .badge {
+      color: var(--cyan-color);
+    }
+
+    ha-map .leaflet-tile-pane {
+      filter: invert(1) hue-rotate(180deg) saturate(0.8) brightness(0.85);
+    }
+
+    ha-map .leaflet-control {
+      filter: invert(1) hue-rotate(180deg);
+    }
+
   card-mod-card: |
     ha-card {
       border-radius: 1px;
+      overflow: visible;
       clip-path: polygon(
         0% 0%, 
         40px 0%, 
@@ -612,6 +638,7 @@ cyberpunk-2077:
 
     ha-card {
       background-color: var(--red-color);
+      font-family: var(--primary-font-family);
     }
 
     ha-card:hover {
